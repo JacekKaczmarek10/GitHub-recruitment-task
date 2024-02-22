@@ -1,6 +1,6 @@
 # GitHub Repository Listing API
 
-This is a simple Kotlin Spring Boot application that retrieves a list of GitHub repositories for a given username and returns information about each repository, including its branches and last commit SHA. The application is built using Kotlin and Spring Boot 3.
+This is a Kotlin Spring Boot application that retrieves a list of GitHub repositories for a given username and returns information about each repository, including its branches and last commit SHA. The application is built using Kotlin and Spring Boot 3.
 
 ## Endpoint Description
 
