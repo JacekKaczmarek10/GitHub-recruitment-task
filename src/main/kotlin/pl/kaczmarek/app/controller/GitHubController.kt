@@ -1,4 +1,4 @@
-package pl.kaczmarek.app.Controller
+package pl.kaczmarek.app.controller
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.HttpClientErrorException
 import org.springframework.web.client.RestTemplate
+import pl.kaczmarek.app.dto.Branch
+import pl.kaczmarek.app.dto.GithubRepository
+import pl.kaczmarek.app.dto.RepositoryData
 
 @RestController
-class Controller(
+class GitHubController(
     private val restTemplate: RestTemplate
 ) {
     @GetMapping("/{username}/get-repos")
@@ -33,9 +36,3 @@ class Controller(
         }
     }
 }
-
-data class GithubRepository(val name: String, val fork: Boolean, val branches_url: String, val owner: Owner)
-data class Owner(val login: String)
-data class Branch(val name: String, val commit: Commit)
-data class Commit(val sha: String)
-data class RepositoryData(val repositoryName: String, val ownerLogin: String, val branches: List<Map<String, String>>)
